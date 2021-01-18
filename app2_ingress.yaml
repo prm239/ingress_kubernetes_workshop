@@ -4,7 +4,7 @@ metadata:
   name: app2-ingress
 spec:
   rules:
-  - host: app2.dockersec.me
+  - host: app2.dockerhack.me
     http:
       paths:
       - backend:
