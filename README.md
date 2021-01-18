@@ -73,7 +73,7 @@ metadata:
   name: app1-ingress
 spec:
   rules:
-  - host: app1.dockersec.me
+  - host: app1.dockerhack.me
     http:
       paths:
       - backend:
@@ -86,8 +86,8 @@ kubectl  get ingress  -n app1
 ```
 
 ```
-curl -kv  -H "Host: app1.dockersec.me" http://localhost:$WEB
-curl -kv  -H "Host: app2.dockersec.me" http://localhost:$WEB  #this should not work
+curl -kv  -H "Host: app1.dockerhack.me" http://localhost:$WEB
+curl -kv  -H "Host: app2.dockerhack.me" http://localhost:$WEB  #this should not work
 ```
 
 9. Let's configure an Ingress resource  app2_ingress.yaml
@@ -99,7 +99,7 @@ metadata:
   name: app2-ingress
 spec:
   rules:
-  - host: app2.dockersec.me
+  - host: app2.dockerhack.me
     http:
       paths:
       - backend:
@@ -111,8 +111,8 @@ kubectl apply -n app2 -f app2_ingress.yaml
 kubectl  get ingress  -n app2
 ```
 ```
-curl -kv  -H "Host: app1.dockersec.me" http://localhost:$WEB
-curl -kv  -H "Host: app2.dockersec.me" http://localhost:$WEB  #this should work now
+curl -kv  -H "Host: app1.dockerhack.me" http://localhost:$WEB
+curl -kv  -H "Host: app2.dockerhack.me" http://localhost:$WEB  #this should work now
 ```
 
 
@@ -140,10 +140,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - tlsapp1.dockersec.me
+      - tlsapp1.dockerhack.me
     secretName: tlscertsapp1
   rules:
-  - host: tlsapp1.dockersec.me
+  - host: tlsapp1.dockerhack.me
     http:
       paths:
       - path: /
@@ -164,8 +164,8 @@ Add to /etc/hosts
 ```
 
 ```
-curl -kv  -H "Host: tlsapp1.dockersec.me" https://tlsapp1.dockersec.me:$SECUREWEB
-curl -kv  -H "Host: tlsapp1.dockersec.me" https://localhost:$SECUREWEB
+curl -kv  -H "Host: tlsapp1.dockerhack.me" https://tlsapp1.dockersec.me:$SECUREWEB
+curl -kv  -H "Host: tlsapp1.dockerhack.me" https://localhost:$SECUREWEB
 ```
 
 
