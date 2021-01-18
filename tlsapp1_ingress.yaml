@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - tlsapp1.dockersec.me
+      - tlsapp1.dockerhack.me
     secretName: tlscertsapp1
   rules:
-  - host: tlsapp1.dockersec.me
+  - host: tlsapp1.dockerhack.me
     http:
       paths:
       - path: /
