@@ -123,7 +123,7 @@ curl -kv  -H "Host: app2.dockerhack.me" http://localhost:$WEB  #this should work
 11. Create a certificate and key
 
 ```
-openssl req -x509 -newkey rsa:2048 -keyout tls.key -out tls.crt -days 365 -nodes -subj "/CN=tlsapp1.dockersec.me"
+openssl req -x509 -newkey rsa:2048 -keyout tls.key -out tls.crt -days 365 -nodes -subj "/CN=tlsapp1.dockerhack.me"
 kubectl create secret tls tlscertsapp1 -n app1 --cert=./tls.crt --key=./tls.key
 kubectl describe secret -n app1 tlscertsapp1
 ```
